@@ -2,10 +2,26 @@
 .authform{:style => "max-width:600px;"}
   = simple_form_for @move, :html => { :class => 'form-vertical' } do |f|
     -if @move.new_record?
-      %h3=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize
+      %table
+        %thead
+          %tr
+            %th
+              = image_tag( @move_type.icon_path, :width => 40, :height => 40) if @move_type.present?
+            %th{:width => "20px;"}
+            %th
+              %h3= t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize
     -else
-      %h3=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize
+      %table
+        %thead
+          %tr
+            %th
+              = image_tag( @move.move_type.icon_path, :width => 40, :height => 40) if @move.move_type.present?
+            %th{:width => "20px;"}
+            %th
+              %h3=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize
 
+    -if @move_type.present?
+      = f.hidden_field  :move_type_id, :value => @move_type.id
     .form-group
       = f.label :title
       = f.text_field :title, :autofocus => true, class: 'form-control'

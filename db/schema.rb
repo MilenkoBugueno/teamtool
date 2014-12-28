@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141228090351) do
+ActiveRecord::Schema.define(version: 20141228115306) do
 
   create_table "move_types", force: true do |t|
     t.string   "title"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20141228090351) do
     t.integer  "container_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "move_type_id"
   end
 
   create_table "users", force: true do |t|

@@ -13,8 +13,9 @@
   %tbody
     - @moves.each do |move|
       %tr
-        %td= link_to move.id, move_path(move)
-        %td= move.title
+        %td= image_tag( move.move_type.icon_path, :width => 20, :height => 20) if move.move_type.present?
+        %td= link_to move.title, move_path(move)
+        %td= link_to move.title, move_path(move)
         %td= move.start_date.to_s(:short)
         %td= move.end_date.to_s(:short)
         %td= move.user.name if move.user.present?

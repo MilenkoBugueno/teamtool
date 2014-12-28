@@ -14,6 +14,7 @@ class MovesController < ApplicationController
 
   def new
     @move = Move.new
+    @move_type = MoveType.find(params[:move_type_id]) if params[:move_type_id].present?
     respond_with(@move)
   end
 
@@ -42,6 +43,6 @@ class MovesController < ApplicationController
     end
 
     def move_params
-      params.require(:move).permit(:title, :description, :results, :start_date, :end_date, :user_id, :project_id, :category_id, :inscription_id, :container_id)
+      params.require(:move).permit(:title, :description, :results, :start_date, :end_date, :user_id, :project_id, :category_id, :inscription_id, :container_id, :move_type_id)
     end
 end

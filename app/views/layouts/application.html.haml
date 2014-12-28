@@ -34,7 +34,7 @@
               .row
                 - MoveType.all.each do |move_type|
                   .col-lg-1
-                    = link_to image_tag( move_type.icon_path, :width => 40, :height => 40), new_move_path,  "data-toggle"=>"tooltip", :title=>move_type.title
+                    = link_to image_tag( move_type.icon_path, :width => 40, :height => 40), new_move_path(move_type_id: move_type.id),  "data-toggle"=>"tooltip", :title=>move_type.title
 
           .panel.panel-default
             .panel-body
