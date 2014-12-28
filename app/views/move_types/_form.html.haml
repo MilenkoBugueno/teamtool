@@ -1,12 +1,13 @@
-= simple_form_for(@move_type) do |f|
-  = f.error_notification
-
-  .form-inputs
-    = f.input :title
-    = f.input :icon_path
-    = f.input :sprint
-    = f.input :day_plan
-    = f.input :user_story
-
-  .form-actions
-    = f.button :submit
+= simple_form_for @move_type, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :title
+  = error_span(@move_type[:title])
+  = f.input :icon_path
+  = error_span(@move_type[:icon_path])
+  = f.input :sprint
+  = error_span(@move_type[:sprint])
+  = f.input :day_plan
+  = error_span(@move_type[:day_plan])
+  = f.input :user_story
+  = error_span(@move_type[:user_story])
+  = f.button :submit, :class => 'btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), move_types_path, :class => 'btn btn-default'
