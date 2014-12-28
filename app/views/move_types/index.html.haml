@@ -1,0 +1,27 @@
+%h1 Listing move_types
+
+%table
+  %tr
+    %th Title
+    %th Icon path
+    %th Sprint
+    %th Day plan
+    %th User story
+    %th
+    %th
+    %th
+
+  - @move_types.each do |move_type|
+    %tr
+      %td= move_type.title
+      %td= move_type.icon_path
+      %td= move_type.sprint
+      %td= move_type.day_plan
+      %td= move_type.user_story
+      %td= link_to 'Show', move_type
+      %td= link_to 'Edit', edit_move_type_path(move_type)
+      %td= link_to 'Destroy', move_type, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Move type', new_move_type_path

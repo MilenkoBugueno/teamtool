@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @move_type.title
+%p
+  %b Icon path:
+  = @move_type.icon_path
+%p
+  %b Sprint:
+  = @move_type.sprint
+%p
+  %b Day plan:
+  = @move_type.day_plan
+%p
+  %b User story:
+  = @move_type.user_story
+
+= link_to 'Edit', edit_move_type_path(@move_type)
+\|
+= link_to 'Back', move_types_path

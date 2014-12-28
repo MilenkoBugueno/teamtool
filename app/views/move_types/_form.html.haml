@@ -1,0 +1,12 @@
+= simple_form_for(@move_type) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.input :icon_path
+    = f.input :sprint
+    = f.input :day_plan
+    = f.input :user_story
+
+  .form-actions
+    = f.button :submit
