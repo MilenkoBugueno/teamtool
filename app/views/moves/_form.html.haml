@@ -1,0 +1,34 @@
+- model_class = Move
+.authform{:style => "max-width:600px;"}
+  = simple_form_for @move, :html => { :class => 'form-vertical' } do |f|
+    -if @move.new_record?
+      %h3=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize
+    -else
+      %h3=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize
+
+    .form-group
+      = f.label :title
+      = f.text_field :title, :autofocus => true, class: 'form-control'
+      = error_span(@move[:title])
+    .form-group
+      = f.label :description
+      = f.text_area :description, :autofocus => true, class: 'form-control'
+      = error_span(@move[:description])
+    .form-group
+      = f.label :results
+      = f.text_area :results, :autofocus => true, class: 'form-control'
+      = error_span(@move[:results])
+    .form-group
+      = f.input :start_date
+      = error_span(@move[:start_date])
+    .form-group
+      = f.input :end_date
+      = error_span(@move[:end_date])
+    .form-group
+      -if @move.new_record?
+        = f.association :user, :selected =>  current_user.id
+      -else
+        = f.association :user
+      = error_span(@move[:user_id])
+    = f.button :submit, :class => 'btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), moves_path, :class => 'btn btn-default'

@@ -11,7 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141003175649) do
+ActiveRecord::Schema.define(version: 20141228090351) do
+
+  create_table "move_types", force: true do |t|
+    t.string   "title"
+    t.string   "icon_path"
+    t.boolean  "sprint"
+    t.boolean  "day_plan"
+    t.boolean  "user_story"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "moves", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "results"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.integer  "category_id"
+    t.integer  "inscription_id"
+    t.integer  "container_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
