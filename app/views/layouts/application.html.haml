@@ -31,18 +31,23 @@
         .col-lg-6
           .panel.panel-default
             .panel-body
-              Icons
-              %br
-              %br
-              %ul.nav.nav-pills
-                %li.active{role: "presentation"}
-                  =link_to "My Day", "#"
-                %li{role: "presentation"}
-                  =link_to "Sprint", "#"
-                %li{role: "presentation"}
-                  =link_to "Backlog", "#"
-                %li{role: "presentation"}
-                  =link_to "Kalender", "#"
+              .row
+                - MoveType.all.each do |move_type|
+                  .col-lg-1
+                    = link_to image_tag( move_type.icon_path, :width => 40, :height => 40), new_move_path,  "data-toggle"=>"tooltip", :title=>move_type.title
+
+          .panel.panel-default
+            .panel-body
+              .row
+                %ul.nav.nav-pills
+                  %li.active{role: "presentation"}
+                    =link_to "My Day", "#"
+                  %li{role: "presentation"}
+                    =link_to "Sprint", "#"
+                  %li{role: "presentation"}
+                    =link_to "Backlog", "#"
+                  %li{role: "presentation"}
+                    =link_to "Kalender", "#"
           .panel.panel-default
             .panel-body
               = yield

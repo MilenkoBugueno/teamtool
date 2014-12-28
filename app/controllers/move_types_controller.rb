@@ -1,5 +1,7 @@
 class MoveTypesController < ApplicationController
   before_action :set_move_type, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
+  respond_to :html, :xml, :json
 
   def index
     @move_types = MoveType.all
