@@ -1,0 +1,22 @@
+= simple_form_for @certification, :html => { :class => 'form-horizontal' } do |f|
+  =f.label :title
+  = f.text_field :title, :autofocus => true, class: 'form-control'
+  = error_span(@certification[:title])
+  =f.label :short_name
+  = f.text_field :short_name, :autofocus => true, class: 'form-control'
+  = error_span(@certification[:short_name])
+  = f.label :description
+  = f.text_area :description, :autofocus => true, class: 'form-control'
+  = error_span(@certification[:description])
+  = f.input :peer_approvements, class: 'form-control'
+  = error_span(@certification[:peer_approvements])
+  = f.input :level_id
+  = error_span(@certification[:level_id])
+  = f.association :move_type
+  = error_span(@certification[:move_type_id])
+  = f.input :moves_goal
+  = error_span(@certification[:moves_goal])
+  = f.input :duration
+  = error_span(@certification[:duration])
+  = f.button :submit, :class => 'btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), certifications_path, :class => 'btn btn-default'
