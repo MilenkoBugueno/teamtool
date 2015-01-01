@@ -18,6 +18,7 @@ gem 'haml-rails'
 gem 'pundit'
 gem 'simple_form'
 gem 'upmin-admin'
+gem 'debase'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
