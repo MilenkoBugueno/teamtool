@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :certifications
+
   resources :move_types
 
   resources :moves

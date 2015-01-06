@@ -20,6 +20,8 @@ gem 'simple_form'
 gem 'upmin-admin'
 gem 'tzinfo-data'
 gem 'bcrypt-ruby', '3.1.1.rc1', :require => 'bcrypt'
+gem 'debase'
+gem 'figaro'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]

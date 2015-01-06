@@ -20,14 +20,26 @@
               %h4 Certifications
             .panel-body
               %ul.nav.nav-pills.nav-stacked
-                %li
+                -Certification.all.each do |cert|
+                  %hr
+                  %li{role: "presentation"}
+                    =link_to cert.short_name, cert
+                    .row
+                      .col-lg-6
+                        Move Progress:
+                      .col-lg-6
+                        .progress
+                          .progress-bar.progress-bar-success{role: "progressbar", "aria-valuenow"=> "60", "aria-valuemin"=> "0", "aria-valuemax"=> "100", style: "width: 60%;"}
+                            60%
+                    .row
+                      .col-lg-6
+                        Time Progress:
+                      .col-lg-6
+                        .progress
+                          .progress-bar.progress-bar-success{role: "progressbar", "aria-valuenow"=> "40", "aria-valuemin"=> "0", "aria-valuemax"=> "100", style: "width: 40%;"}
+                            40%
 
-                %li.active{role: "presentation"}
-                  =link_to "CERT-01", "#"
-                %li{role: "presentation"}
-                  =link_to "CERT-02", "#"
-
-
+                  %hr
         .col-lg-6
           .panel.panel-default
             .panel-body
@@ -60,7 +72,7 @@
             .panel-body
               %ul.nav.nav-pills.nav-stacked
                 -User.all.each do |user|
-                  -if user == current_user
+                  -if @user.present? && user == @user
                     %li.active{role: "presentation"}
                       =link_to user.name, user_path(user)
                   -else
