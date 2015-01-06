@@ -13,6 +13,7 @@ test:
     pool: 5
     timeout: 5000
 #production area
+#production test
 production:
     adapter: sqlite3
     database: db/production.sqlite3
