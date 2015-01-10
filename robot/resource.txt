@@ -10,21 +10,23 @@ Library           Selenium2Library
 ${SERVER}         localhost:3000
 ${BROWSER}        Firefox
 ${DELAY}          0
-${VALID USER}     teampleay.tool@gmail.com
+${VALID USER}     teamplay.tool@gmail.com
 ${VALID PASSWORD}    admin432
-${LOGIN URL}      http://${SERVER}/
+${LOGIN URL}      http://${SERVER}/users/sign_in
 ${WELCOME URL}    http://${SERVER}/
 ${ERROR URL}      http://${SERVER}/error.html
 
 *** Keywords ***
-Open Browser To Login Page
-    Open Browser    ${LOGIN URL}    ${BROWSER}
+Open Browser To Welcome Page
+    Open Browser    ${WELCOME URL}    ${BROWSER}
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
     Login Page Should Be Open
 
-Login Page Should Be Open
-    Page Should Contain    You need to sign in or sign up before continuing
+Open Browser To Login Page
+    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed    ${DELAY}
 
 Go To Login Page
     Go To    ${LOGIN URL}
@@ -44,6 +46,10 @@ Submit Credentials
 Welcome Page Should Be Open
     Location Should Be    ${WELCOME URL}
     Page Should Contain    Signed in successfully
+
+Login Page Should Be Open
+    Location Should Be    ${LOGIN URL}
+    Page Should Contain    You need to sign in or sign up before continuing
 
 
 Login Should Have Failed

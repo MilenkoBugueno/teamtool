@@ -7,14 +7,18 @@ Resource          resource.txt
 Test Teardown     Close Browser
 
 *** Test Cases ***
+Login Required
+    When browser is opened to teamtool page
+    Then login page should be open
+
 Valid Login
-    Given browser is opened to login page
-    When user "teamplay.tool@gmail.com" logs in with password "admin432"
+    Given browser is opened to teamtool page
+    When user "${VALID USER}" logs in with password "${VALID PASSWORD}"
     Then welcome page should be open
 
 *** Keywords ***
-Browser is opened to login page
-    Open browser to login page
+Browser is opened to Teamtool page
+    Open browser to welcome page
 
 User "${username}" logs in with password "${password}"
     Input user name    ${username}
