@@ -80,3 +80,9 @@ pickle-email-*.html
 
 # Ignore application configuration
 /config/application.yml
+
+#ignore robot framework output files
+/robot/output.xml
+/robot/report.html
+/robot/log.html
+
