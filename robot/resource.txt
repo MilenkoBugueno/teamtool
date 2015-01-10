@@ -9,7 +9,7 @@ Library           Selenium2Library
 *** Variables ***
 ${SERVER}         localhost:3000
 ${BROWSER}        Firefox
-${DELAY}          0
+${DELAY}          2
 ${VALID USER}     teamplay.tool@gmail.com
 ${VALID PASSWORD}    admin432
 ${LOGIN URL}      http://${SERVER}/users/sign_in

@@ -7,7 +7,7 @@ Resource          resource.txt
 Test Teardown     Close Browser
 
 *** Test Cases ***
-Login Required
+Welcome Page
     When browser is opened to teamtool page
     Then login page should be open
 
