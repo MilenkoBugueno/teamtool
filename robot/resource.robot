@@ -9,10 +9,11 @@ Library           Selenium2Library
 *** Variables ***
 ${SERVER}         localhost:3000
 ${BROWSER}        Firefox
-${DELAY}          0
+${DELAY}          1
 ${VALID USER}     teamplay.tool@gmail.com
 ${VALID PASSWORD}    admin432
 ${LOGIN URL}      http://${SERVER}/users/sign_in
+${REGISTRATION URL}      http://${SERVER}/users/sign_up
 ${WELCOME URL}    http://${SERVER}/
 ${ERROR URL}      http://${SERVER}/error.html
 
@@ -45,11 +46,11 @@ Submit Credentials
 
 Welcome Page Should Be Open
     Location Should Be    ${WELCOME URL}
-    Page Should Contain    Signed in successfully
+
 
 Login Page Should Be Open
-    Location Should Be    ${LOGIN URL}
-    Page Should Contain    You need to sign in or sign up before continuing
+    Location Should Be    ${WELCOME URL}
+    Page Should Contain    Welcome to the Teamtool
 
 
 Login Should Have Failed
