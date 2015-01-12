@@ -29,6 +29,12 @@ Open Browser To Login Page
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
 
+Open Browser To Registration Page
+    Open Browser    ${REGISTRATION URL}    ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed    ${DELAY}
+    Registration Page Should Be Open
+
 Go To Login Page
     Go To    ${LOGIN URL}
     Login Page Should Be Open
@@ -52,6 +58,8 @@ Login Page Should Be Open
     Location Should Be    ${WELCOME URL}
     Page Should Contain    Welcome to the Teamtool
 
+Registration Page Should Be Open
+    Location Should Be    ${REGISTRATION URL}
 
 Login Should Have Failed
     Location Should Be    ${ERROR URL}

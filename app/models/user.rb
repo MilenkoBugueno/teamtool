@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   enum role: [:user, :vip, :admin]
   after_initialize :set_default_role, :if => :new_record?
+  validates_presence_of :name, :surname, :user_name
 
   has_many :moves
 

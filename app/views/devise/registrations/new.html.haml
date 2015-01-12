@@ -3,8 +3,14 @@
     %h3= t('devise.registrations.register')
     = devise_error_messages! 
     .form-group
-      = f.label :name 
+      = f.label :first_name
       = f.text_field :name, :autofocus => true, class: 'form-control' 
+    .form-group
+      = f.label :surname
+      = f.text_field :surname, :autofocus => true, class: 'form-control'
+    .form-group
+      = f.label :user_name
+      = f.text_field :user_name, :autofocus => true, class: 'form-control'
     %br
     %h4= t('devise.sessions.login')
     .form-group

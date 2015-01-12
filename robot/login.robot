@@ -32,17 +32,21 @@ Valid Login
 Browser is opened to Teamtool page
     Open browser to welcome page
 
+Browser is opened to registration page
+    Open browser to registration page
+
 User "${username}" logs in with password "${password}"
     Input user name    ${username}
     Input password    ${password}
     Submit credentials
 
 I register with first name "${firstname}", surname "${surname}", user name "${username}", email "${email}" and password "${psw}"
-    Input Text    user_firstname    ${firstname}
+    Input Text    user_name    ${firstname}
     Input Text    user_surname    ${surname}
-    Input Text    user_username    ${username}
+    Input Text    user_user_name    ${username}
     Input Text    user_email    ${email}
     Input Text    user_password    ${psw}
+    Input Text    user_password_confirmation    ${psw}
     Submit credentials
 
 I click the Register Button
