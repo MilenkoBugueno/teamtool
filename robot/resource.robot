@@ -21,7 +21,7 @@ ${ERROR URL}      http://${SERVER}/error.html
 Open Browser To Welcome Page
     Open Browser    ${WELCOME URL}    ${BROWSER}
     Set Selenium Speed    ${DELAY}
-    Login Page Should Be Open
+    I see the login page
 
 Open Browser To Login Page
     Open Browser    ${LOGIN URL}    ${BROWSER}
@@ -34,7 +34,7 @@ Open Browser To Registration Page
 
 Go To Login Page
     Go To    ${LOGIN URL}
-    Login Page Should Be Open
+    I see the login page
 
 Input Username
     [Arguments]    ${username}
@@ -51,7 +51,7 @@ Welcome Page Should Be Open
     Location Should Be    ${WELCOME URL}
 
 
-Login Page Should Be Open
+I see the login page
     Location Should Be    ${WELCOME URL}
     Page Should Contain    Welcome to the Teamtool
 
