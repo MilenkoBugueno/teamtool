@@ -8,7 +8,7 @@ Library           Selenium2Library
 
 *** Variables ***
 ${SERVER}         teamtool.eu
-${BROWSER}        Firefox
+${BROWSER}        opera
 ${DELAY}          0.4
 ${VALID USER}     teamplay.tool@gmail.com
 ${VALID PASSWORD}    admin432
