@@ -7,7 +7,7 @@ Documentation     A resource file with reusable keywords and variables.
 Library           Selenium2Library
 
 *** Variables ***
-${SERVER}         localhost:3000
+${SERVER}         teamtool.eu
 ${BROWSER}        Firefox
 ${DELAY}          0.4
 ${VALID USER}     teamplay.tool@gmail.com
