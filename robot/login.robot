@@ -54,7 +54,7 @@ Too Short Password
 Registration with Wrong Email
     Given browser is opened to registration page
     When I register with first name "Rose", surname "Klein", user name "Klein", email "klein", password "changeme" and confirmation "changeme"
-    Then I see the message: "Please include an '@' in the email address"
+    Then I see the message: "Please enter an email address"
 
 
 Valid Login
