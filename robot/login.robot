@@ -68,8 +68,20 @@ Not Valid User and Password
     When I log in as "not_valid@example.com" with password "not valid psw"
     Then I see the message: "Invalid email or password"
 
+Forgot My Password Link
+    When I open the Browser to Teamtool page
+    Then I see the login page
+    And I see a "Forgot password?" link
+
+Request a new password
+    Given I open the Browser to Teamtool page
+    When I click on the link "Forgot password?"
+    #Then request a new password page should be open
 
 *** Keywords ***
+I see a "${link}" link
+    Page Should Contain Link    link=${link}
+
 I open the Browser to Teamtool page
     Open browser to welcome page
 
@@ -96,6 +108,9 @@ I register without inputs
 
 I click the Register Button
     Click Link    link=Register
+
+I click on the link "${link}"
+    Click Link    link=${link}
 
 Registration page should be open
     Location Should Be    ${REGISTRATION URL}
