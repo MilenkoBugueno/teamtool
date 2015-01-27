@@ -73,10 +73,16 @@ Forgot My Password Link
     Then I see the login page
     And I see a "Forgot password?" link
 
-Request a new password
+Request a new password Page
     Given I open the Browser to Teamtool page
-    When I click on the link "Forgot password?"
-    #Then request a new password page should be open
+    When I click on the button "Forgot password?"
+    Then request a new password page should be open
+
+Request a new password
+    Given I open the Browser to new password page
+    When I enter my login e-mail "${VALID USER}"
+    And I submit the form
+    Then I see the message: "You will receive an email with instructions on how to reset your password in a few minutes."
 
 *** Keywords ***
 I see a "${link}" link
@@ -84,6 +90,9 @@ I see a "${link}" link
 
 I open the Browser to Teamtool page
     Open browser to welcome page
+
+I open the Browser to new password page
+    Open Browser To New Password Page
 
 Browser is opened to registration page
     Open browser to registration page
@@ -102,8 +111,13 @@ I register with first name "${firstname}", surname "${surname}", user name "${us
     Input Text    user_password_confirmation    ${con}
     Submit credentials
 
+I enter my login e-mail "${email}"
+    Input Text    user_email    ${email}
 
 I register without inputs
+    Submit credentials
+
+I submit the form
     Submit credentials
 
 I click the Register Button
@@ -118,3 +132,7 @@ Registration page should be open
 
 I see the message: "${msg}"
     Page Should Contain    ${msg}
+
+Request a new password page should be open
+    Location Should Be    http://${SERVER}/users/password/new
+    Page Should Contain    Forgot your password?

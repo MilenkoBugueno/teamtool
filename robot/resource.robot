@@ -14,6 +14,7 @@ ${VALID USER}     teamplay.tool@gmail.com
 ${VALID PASSWORD}    admin432
 ${LOGIN URL}      http://${SERVER}/users/sign_in
 ${REGISTRATION URL}      http://${SERVER}/users/sign_up
+${NEW PASSWORD URL}      http://${SERVER}/users/password/new
 ${WELCOME URL}    http://${SERVER}/
 ${ERROR URL}      http://${SERVER}/error.html
 
@@ -31,6 +32,12 @@ Open Browser To Registration Page
     Open Browser    ${REGISTRATION URL}    ${BROWSER}
     Set Selenium Speed    ${DELAY}
     Registration Page Should Be Open
+
+Open Browser To New Password Page
+    Open Browser    ${NEW PASSWORD URL}    ${BROWSER}
+    Set Selenium Speed    ${DELAY}
+    Location Should Be    ${NEW PASSWORD URL}
+
 
 Go To Login Page
     Go To    ${LOGIN URL}
