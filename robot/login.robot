@@ -78,11 +78,19 @@ Request a new password Page
     When I click on the button "Forgot password?"
     Then request a new password page should be open
 
-Request a new password
+Valid new password request
     Given I open the Browser to new password page
     When I enter my login e-mail "${VALID USER}"
     And I submit the form
     Then I see the message: "You will receive an email with instructions on how to reset your password in a few minutes."
+
+Not valid new password request
+    Given I open the Browser to new password page
+    When I enter my login e-mail "not_valid@example.com"
+    And I submit the form
+    Then I see the error message: "Email not found"
+
+
 
 *** Keywords ***
 I see a "${link}" link
@@ -132,6 +140,12 @@ Registration page should be open
 
 I see the message: "${msg}"
     Page Should Contain    ${msg}
+
+I see the error message: "${msg}"
+    Page Should Contain    error
+    Page Should Contain    prohibited this user from being saved
+    Page Should Contain    ${msg}
+
 
 Request a new password page should be open
     Location Should Be    http://${SERVER}/users/password/new
