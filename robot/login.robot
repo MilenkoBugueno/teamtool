@@ -73,6 +73,7 @@ Forgot My Password Link
     Then I see the login page
     And I see a "Forgot password?" link
 
+#TT-60: Forgot password
 Request a new password Page
     Given I open the Browser to Teamtool page
     When I click on the button "Forgot password?"
@@ -90,7 +91,21 @@ Not valid new password request
     And I submit the form
     Then I see the error message: "Email not found"
 
+#TT-77 First Login Register - Password too long, address
+Too long Password
+    Given Browser is opened to registration page
+    When I register with first name "Mark", surname "Groß", user name "Marky", email "mark@world.com", password "12345678901234567890123456" and confirmation "12345678901234567890123456"
+    Then I see the error message: "Password too long (maximal 25 characters)"
 
+User name too short
+    Given Browser is opened to registration page
+    When I register with first name "Mark", surname "Groß", user name "my", email "my@world.com", password "12345678" and confirmation "12345678"
+    Then I see the error message: "User name too short"
+
+User name exists already
+    Given Browser is opened to registration page
+    When I register with first name "Mark", surname "Joe", user name "Mike", email "joe@world.com", password "12345678" and confirmation "12345678"
+    Then I see the error message: "User name is already given"
 
 *** Keywords ***
 I see a "${link}" link
