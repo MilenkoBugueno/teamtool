@@ -10,8 +10,6 @@ Library           Selenium2Library
 ${SERVER}         localhost:3000
 ${BROWSER}        Firefox
 ${DELAY}          0.4
-${VALID USER}     teamplay.tool@gmail.com
-${VALID PASSWORD}    admin432
 ${LOGIN URL}      http://${SERVER}/users/sign_in
 ${REGISTRATION URL}      http://${SERVER}/users/sign_up
 ${NEW PASSWORD URL}      http://${SERVER}/users/password/new

@@ -82,8 +82,13 @@ pickle-email-*.html
 /config/application.yml
 
 #ignore robot framework output files
+output.xml
+report.html
+log.html
+*screenshot*.png
 /robot/output.xml
 /robot/report.html
 /robot/log.html
 /robot/*.png
+/robot/secrets.robot
 

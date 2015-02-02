@@ -4,6 +4,7 @@ Documentation     A test suite with a single Gherkin style test.
 ...               This test is functionally identical to the example in
 ...               valid_login.txt file.
 Resource          resource.robot
+Resource          secrets.robot
 Test Teardown     Close Browser
 
 *** Test Cases ***
@@ -91,7 +92,7 @@ Not valid new password request
     And I submit the form
     Then I see the error message: "Email not found"
 
-#TT-77 First Login Register - Password too long, address
+#TT-77 First Login Register - Password too long, user name validation
 Too long Password
     Given Browser is opened to registration page
     When I register with first name "Mark", surname "Groß", user name "Marky", email "mark@world.com", password "12345678901234567890123456" and confirmation "12345678901234567890123456"
@@ -106,6 +107,13 @@ User name exists already
     Given Browser is opened to registration page
     When I register with first name "Mark", surname "Joe", user name "Mike", email "joe@world.com", password "12345678" and confirmation "12345678"
     Then I see the error message: "User name is already given"
+
+#TT-78 Email after Register
+Registration e-mail
+    Given I register with first name "Nico", surname "Bob", user name "Nico Bob", email "${VALID GMAIL ADDRESS}", password "${psw}" and confirmation "${con}"
+    #When I click the Register Button
+    #Then I receive a welcome Mail from the Teamtool at my eMail address
+
 
 *** Keywords ***
 I see a "${link}" link
@@ -165,3 +173,4 @@ I see the error message: "${msg}"
 Request a new password page should be open
     Location Should Be    http://${SERVER}/users/password/new
     Page Should Contain    Forgot your password?
+
