@@ -77,20 +77,20 @@ Forgot My Password Link
 #TT-60: Forgot password
 Request a new password Page
     Given I open the Browser to Teamtool page
-    When I click on the button "Forgot password?"
+    When I click on the link "Forgot password?"
     Then request a new password page should be open
 
 Valid new password request
     Given I open the Browser to new password page
     When I enter my login e-mail "${VALID USER}"
     And I submit the form
-    Then I see the message: "You will receive an email with instructions on how to reset your password in a few minutes."
+    Then I see the message: "Password Request successfully submitted. Please check your Inbox. It may take a few minutes."
 
 Not valid new password request
     Given I open the Browser to new password page
     When I enter my login e-mail "not_valid@example.com"
     And I submit the form
-    Then I see the error message: "Email not found"
+    Then I see the error message: "Ups. Email not registered yet"
 
 #TT-77 First Login Register - Password too long, user name validation
 Too long Password
@@ -110,7 +110,7 @@ User name exists already
 
 #TT-78 Email after Register
 Registration e-mail
-    Given I register with first name "Nico", surname "Bob", user name "Nico Bob", email "${VALID GMAIL ADDRESS}", password "${psw}" and confirmation "${con}"
+    Given I register with first name "Nico", surname "Bob", user name "Nico Bob", email "dummy@example.com", password "changeme" and confirmation "${con}"
     #When I click the Register Button
     #Then I receive a welcome Mail from the Teamtool at my eMail address
 
@@ -155,6 +155,9 @@ I click the Register Button
     Click Link    link=Register
 
 I click on the link "${link}"
+    Click Link    link=${link}
+
+I click on the button "${link}"
     Click Link    link=${link}
 
 Registration page should be open
