@@ -17,11 +17,6 @@ Registration Page
     When I click the Register Button
     Then registration page should be open
 
-Valid Registration
-    Given browser is opened to registration page
-    When I register with first name "Mike", surname "Mueller", user name "Mike", email "mike@example.com", password "changeme" and confirmation "changeme"
-    Then welcome page should be open
-    And I see the message: "A message with a confirmation link has been sent to your email address"
 
 Not Valid Registration
     Given browser is opened to registration page
@@ -109,10 +104,12 @@ User name exists already
     Then I see the error message: "User name is already given"
 
 #TT-78 Email after Register
-Registration e-mail
-    Given I register with first name "Nico", surname "Bob", user name "Nico Bob", email "dummy@example.com", password "changeme" and confirmation "${con}"
-    #When I click the Register Button
-    #Then I receive a welcome Mail from the Teamtool at my eMail address
+Valid Registration
+    Given browser is opened to registration page
+    When I register with first name "Mike", surname "Mueller", user name "Mike", email "mike@example.com", password "changeme" and confirmation "changeme"
+    Then welcome page should be open
+    And I see the message: "A message with a confirmation link has been sent to your email address"
+    And I receive a welcome email
 
 
 *** Keywords ***
@@ -177,3 +174,4 @@ Request a new password page should be open
     Location Should Be    http://${SERVER}/users/password/new
     Page Should Contain    Forgot your password?
 
+I receive a welcome email
