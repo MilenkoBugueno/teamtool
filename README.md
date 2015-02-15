@@ -1,7 +1,7 @@
 Ts
 ================
 
-Teamtool is an open source web-based tool, which helps teams on one hand adopting new agile processes and on the other hand recruiting and training new members by means of on-the-job training units, so-called Agile Moves.
+Teamtool is an emerging open source and web-based tool, which helps teams on one hand adopting new agile processes and on the other hand recruiting and training new members by means of on-the-job training units, so-called Agile Moves.
 
 Agile Moves are
 * clearly defined routines
@@ -23,6 +23,7 @@ Getting Started
 This application requires:
 * Ruby 2.1.1
 * Rails 4.1.6
+
 If you need to install ruby on rails first you can find at http://rubyonrails.org/download/ how to do it.
 
 Installation steps:
@@ -43,7 +44,7 @@ How to run the tests:
 * Install the robot framework: https://github.com/robotframework/robotframework/blob/master/INSTALL.rst
 * Configure the global variables at "robot/resource.robot"
 * Set your secret variables at "robot/secrets.robot"
-* For running all test enter "pybot robot/*"
+* For running all tests enter "pybot robot/*"
 * For running a specific test enter "pybot --test "Test Scenario Name here" file_name_here.robot"
 
 Documentation and Support
