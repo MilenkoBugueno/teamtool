@@ -1,7 +1,7 @@
 Teamtool
 ================
 
-Teamtool is an emerging open source and web-based tool, which helps teams on one hand adopting new agile processes and on the other hand recruiting and training new members by means of on-the-job training units, so-called Agile Moves.
+The "Teamtool" is an emerging open source and web-based tool. On the one hand it helps teams adopting new agile processes and on the other hand it helps to recruit and train team members by means of on-the-job training units, the so-called "Agile Moves".
 
 Agile Moves are
 * clearly defined routines
@@ -10,7 +10,7 @@ Agile Moves are
 * to train certain aspects of teamwork at a time
 * to improve team play and the overall productivity
 
-“Agile”, because the moves enable team to think and develop in an agile way.
+“Agile”, because the moves enable teams to think and develop in an agile way.
 
 “Moves”, because single elements are taken from different methods like Scrum, similar to defined steps in dancing. These moves are then trained specifically and, much like in dancing, can be connected to increasingly complex sequences to live agile values on the job.
 
@@ -49,7 +49,7 @@ How to run the tests:
 
 Documentation and Support
 -------------------------
-We are working on a wiki for the project. It should be publicy available soon. Till then please feel free to use the issue area to give us feedback.
+We are working on a wiki for the project. It should be publicly available soon. Please feel free to use the issue area to give us feedback.
 
 License
 -------
