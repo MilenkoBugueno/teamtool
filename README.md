@@ -1,4 +1,4 @@
-Ts
+Teamtool
 ================
 
 Teamtool is an emerging open source and web-based tool, which helps teams on one hand adopting new agile processes and on the other hand recruiting and training new members by means of on-the-job training units, so-called Agile Moves.
