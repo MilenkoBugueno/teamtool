@@ -9,12 +9,13 @@ Library           Selenium2Library
 *** Variables ***
 ${SERVER}         localhost:3000
 ${BROWSER}        Firefox
-${DELAY}          0.4
+${DELAY}          1
 ${LOGIN URL}      http://${SERVER}/users/sign_in
 ${REGISTRATION URL}      http://${SERVER}/users/sign_up
 ${NEW PASSWORD URL}      http://${SERVER}/users/password/new
 ${WELCOME URL}    http://${SERVER}/
 ${ERROR URL}      http://${SERVER}/error.html
+${YAHOOMAIL URL}     https://mail.yahoo.com/
 
 *** Keywords ***
 Open Browser To Welcome Page

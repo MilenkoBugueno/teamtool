@@ -175,3 +175,9 @@ Request a new password page should be open
     Page Should Contain    Forgot your password?
 
 I receive a welcome email
+    Open Browser    ${YAHOOMAIL URL}    ${BROWSER}
+    Set Selenium Speed    ${DELAY}
+    Input Text    username    ${MAIL USER}
+    Input Text    passwd    ${MAIL PSW}
+    Click Button    name=signin
+    #to be completed
