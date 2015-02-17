@@ -106,11 +106,15 @@ User name exists already
 #TT-78 Email after Register
 Valid Registration
     Given browser is opened to registration page
-    When I register with first name "Mike", surname "Mueller", user name "Mike", email "mike@example.com", password "changeme" and confirmation "changeme"
+    When I register with first name "Mike", surname "Mueller", user name "Mike", email "${MAIL USER}", password "changeme" and confirmation "changeme"
     Then welcome page should be open
     And I see the message: "A message with a confirmation link has been sent to your email address"
     And I receive a welcome email
 
+Email confirmation
+    Given Browser is opened to my confirmation email in my inbox
+    When I click on the link "Confirm my account"
+    Then Welcome Page Should Be Open
 
 *** Keywords ***
 I see a "${link}" link
@@ -180,4 +184,5 @@ I receive a welcome email
     Input Text    username    ${MAIL USER}
     Input Text    passwd    ${MAIL PSW}
     Click Button    name=signin
+    Page Should Contain    Confirmation instructions
     #to be completed
