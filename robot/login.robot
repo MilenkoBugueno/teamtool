@@ -112,8 +112,9 @@ Valid Registration
     And I receive a welcome email
 
 Email confirmation
-    Given Browser is opened to my confirmation email in my inbox
-    When I click on the link "Confirm my account"
+    Given I receive a welcome email
+    When I open the email
+    And I click on the link "Confirm my account"
     Then Welcome Page Should Be Open
 
 *** Keywords ***
@@ -185,4 +186,6 @@ I receive a welcome email
     Input Text    passwd    ${MAIL PSW}
     Click Button    name=signin
     Page Should Contain    Confirmation instructions
-    #to be completed
+
+I open the email
+    Click link    link=teamplay.tool@gmail.com
